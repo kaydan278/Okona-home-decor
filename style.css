@@ -614,7 +614,12 @@ nav a:hover {
     padding: 12px 22px;
     text-decoration: none;
     border-radius: 8px;
+    background-color: #D4AF37;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
+
 .testimonial-card p {
     color: #555;
 
