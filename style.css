@@ -1019,6 +1019,13 @@ nav a {
         white-space: nowrap !important;
     }
 
+    .testimonials-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+
     header nav a {
         flex: 0 0 auto !important;
         font-size: 14px !important;
