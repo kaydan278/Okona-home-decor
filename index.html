@@ -526,14 +526,130 @@
     </div>
 </footer>
 
-<script>
-    const productImages = document.querySelectorAll(".gallery img");
+<!-- OKONA FULL SCREEN PRODUCT GALLERY -->
 
-    productImages.forEach(function(image) {
-        image.addEventListener("click", function() {
-            window.open(image.src, "_blank");
-        });
+<div id="imageViewer" class="image-viewer">
+
+    <button id="closeViewer" class="viewer-close">×</button>
+
+    <button id="prevImage" class="viewer-arrow viewer-prev">‹</button>
+
+    <img id="viewerImage" src="" alt="Okona Product">
+
+    <button id="nextImage" class="viewer-arrow viewer-next">›</button>
+
+    <p id="imageCounter" class="image-counter"></p>
+
+</div>
+
+<script>
+
+const productImages = document.querySelectorAll(".gallery img");
+
+const imageViewer = document.getElementById("imageViewer");
+const viewerImage = document.getElementById("viewerImage");
+const closeViewer = document.getElementById("closeViewer");
+const prevImage = document.getElementById("prevImage");
+const nextImage = document.getElementById("nextImage");
+const imageCounter = document.getElementById("imageCounter");
+
+let currentImages = [];
+let currentIndex = 0;
+
+productImages.forEach(function(image) {
+
+    image.addEventListener("click", function() {
+
+        const gallery = image.closest(".gallery");
+
+        currentImages = Array.from(gallery.querySelectorAll("img"));
+
+        currentIndex = currentImages.indexOf(image);
+
+        showImage();
+
+        imageViewer.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+
     });
+
+});
+
+function showImage() {
+
+    viewerImage.src = currentImages[currentIndex].src;
+
+    viewerImage.alt = currentImages[currentIndex].alt;
+
+    imageCounter.textContent =
+        (currentIndex + 1) + " / " + currentImages.length;
+}
+
+function closeImageViewer() {
+
+    imageViewer.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+function nextProductImage() {
+
+    currentIndex++;
+
+    if (currentIndex >= currentImages.length) {
+        currentIndex = 0;
+    }
+
+    showImage();
+}
+
+function previousProductImage() {
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = currentImages.length - 1;
+    }
+
+    showImage();
+}
+
+nextImage.addEventListener("click", nextProductImage);
+
+prevImage.addEventListener("click", previousProductImage);
+
+closeViewer.addEventListener("click", closeImageViewer);
+
+imageViewer.addEventListener("click", function(event) {
+
+    if (event.target === imageViewer) {
+        closeImageViewer();
+    }
+
+});
+
+document.addEventListener("keydown", function(event) {
+
+    if (!imageViewer.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "Escape") {
+        closeImageViewer();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextProductImage();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousProductImage();
+    }
+
+});
+
 </script>
 
 <button id="topButton" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
