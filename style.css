@@ -1670,3 +1670,153 @@ footer {
     bottom: 90px !important;
     z-index: 9999 !important;
 }
+
+/* ================================= */
+/* OKONA FULL SCREEN PRODUCT GALLERY */
+/* ================================= */
+
+.image-viewer {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
+    padding: 25px;
+}
+
+.image-viewer.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Main product image */
+
+#viewerImage {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+    transform: scale(0.92);
+    transition: transform 0.3s ease;
+}
+
+.image-viewer.active #viewerImage {
+    transform: scale(1);
+}
+
+/* Close button */
+
+.viewer-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    font-size: 34px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+.viewer-close:hover {
+    background: rgba(255,255,255,0.28);
+    transform: scale(1.08);
+}
+
+/* Left and right arrows */
+
+.viewer-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.16);
+    color: white;
+    font-size: 48px;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+.viewer-arrow:hover {
+    background: rgba(255,255,255,0.30);
+}
+
+.viewer-prev {
+    left: 20px;
+}
+
+.viewer-next {
+    right: 20px;
+}
+
+/* Image number */
+
+.image-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    background: rgba(0,0,0,0.55);
+    padding: 7px 14px;
+    border-radius: 20px;
+}
+
+/* ================================= */
+/* MOBILE PRODUCT GALLERY */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .image-viewer {
+        padding: 15px;
+    }
+
+    #viewerImage {
+        max-width: 94%;
+        max-height: 78vh;
+        border-radius: 8px;
+    }
+
+    .viewer-close {
+        top: 12px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+        font-size: 30px;
+    }
+
+    .viewer-arrow {
+        width: 48px;
+        height: 48px;
+        font-size: 40px;
+    }
+
+    .viewer-prev {
+        left: 8px;
+    }
+
+    .viewer-next {
+        right: 8px;
+    }
+
+    .image-counter {
+        bottom: 15px;
+        font-size: 14px;
+    }
+}
