@@ -709,3 +709,63 @@ document.addEventListener("keydown", function(event) {
 </a>
 </body>
 </html>
+
+	<!-- ================================================= -->
+<!-- OKONA SCROLL 3D ANIMATION                        -->
+<!-- ================================================= -->
+
+<script>
+
+(function () {
+
+    const animatedItems = document.querySelectorAll(
+        "section, .category-card, .featured-card, .service-card, .why-box, .testimonial-card, .product-category"
+    );
+
+    animatedItems.forEach(function (item) {
+
+        item.classList.add("reveal-on-scroll");
+
+    });
+
+    const observer = new IntersectionObserver(
+        function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    animatedItems.forEach(function (item) {
+
+        observer.observe(item);
+
+    });
+
+})();
+
+</script>
+
+<button id="topButton" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    ↑ Top
+</button>
+	<a href="https://wa.me/233549298714?text=Hello%20Okona%20Home%20Decor%2C%20I%20would%20like%20to%20make%20an%20inquiry."
+   class="floating-whatsapp"
+   aria-label="Chat with Okona Home Decor on WhatsApp">
+    💬
+</a>
+</body>
+</html>
