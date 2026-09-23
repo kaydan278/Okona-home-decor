@@ -1587,7 +1587,7 @@ footer {
 .floating-whatsapp {
     position: fixed;
     right: 22px;
-    bottom: 22px;
+    bottom: 85px;
     width: 58px;
     height: 58px;
     background: #25D366;
@@ -1614,7 +1614,6 @@ footer {
     transform: scale(0.94);
 }
 
-/* WhatsApp pulse */
 @keyframes whatsappPulse {
     0% {
         box-shadow: 0 8px 20px rgba(0,0,0,0.25);
@@ -1631,12 +1630,11 @@ footer {
 
 /* Mobile */
 @media (max-width: 600px) {
-
     .floating-whatsapp {
         width: 54px;
         height: 54px;
         right: 16px;
-        bottom: 18px;
+        bottom: 80px;
         font-size: 25px;
     }
 }
