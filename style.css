@@ -2791,3 +2791,69 @@ section h2:hover {
     position: relative !important;
     z-index: 2 !important;
 }
+
+/* ========================================
+   OKONA MOBILE HERO - FINAL
+======================================== */
+
+@media (max-width: 768px) {
+
+    .video-hero {
+        min-height: 620px !important;
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .video-hero .hero-video {
+        width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+    }
+
+    .video-hero .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 50px 20px !important;
+    }
+
+    .video-hero .hero-small {
+        font-size: 12px !important;
+        letter-spacing: 2px !important;
+    }
+
+    .video-hero h2 {
+        font-size: clamp(32px, 9vw, 48px) !important;
+        line-height: 1.1 !important;
+        margin: 12px 0 !important;
+    }
+
+    .video-hero .hero-text {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+        max-width: 350px !important;
+        margin: 0 auto 22px !important;
+    }
+
+    .video-hero .hero-buttons {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+    }
+
+    .video-hero .hero-buttons a {
+        width: min(280px, 90%) !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+    }
+
+    .video-hero .trust-text {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+        margin-top: 20px !important;
+    }
+}
