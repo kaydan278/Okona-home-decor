@@ -2699,3 +2699,13 @@ section h2:hover {
         transition-duration: 0.01ms !important;
     }
 }
+/* ========================================================= */
+/* OKONA VISIBILITY FIX                                    */
+/* ========================================================= */
+
+/* Make sure all website sections remain visible */
+.reveal-on-scroll {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
