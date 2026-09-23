@@ -1670,111 +1670,182 @@ footer {
     bottom: 90px !important;
     z-index: 9999 !important;
 }
-
-/* ================================= */
-/* OKONA FULL SCREEN PRODUCT GALLERY */
-/* ================================= */
+/* =========================================
+   OKONA FULL SCREEN PRODUCT VIEWER
+========================================= */
 
 .image-viewer {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.94);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease;
-    padding: 25px;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.94) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    z-index: 999999 !important;
+
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    padding: 20px !important;
+    box-sizing: border-box !important;
+
+    transition: opacity 0.25s ease,
+                visibility 0.25s ease !important;
 }
 
 .image-viewer.active {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* Main product image */
 
-#viewerImage {
-    max-width: 90%;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 10px;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.5);
-    transform: scale(0.92);
-    transition: transform 0.3s ease;
+/* PRODUCT IMAGE */
+
+.image-viewer #viewerImage {
+    display: block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    max-width: 90vw !important;
+    max-height: 82vh !important;
+
+    object-fit: contain !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: scale(1) !important;
+
+    border-radius: 10px !important;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,0.5) !important;
+
+    z-index: 1000000 !important;
 }
 
-.image-viewer.active #viewerImage {
-    transform: scale(1);
-}
 
-/* Close button */
+/* CLOSE BUTTON */
 
 .viewer-close {
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    width: 48px;
-    height: 48px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    color: white;
-    font-size: 34px;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 10002;
+    position: absolute !important;
+
+    top: 18px !important;
+    right: 22px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: rgba(255,255,255,0.18) !important;
+    color: white !important;
+
+    font-size: 34px !important;
+    line-height: 1 !important;
+
+    cursor: pointer !important;
+
+    z-index: 1000001 !important;
 }
 
-.viewer-close:hover {
-    background: rgba(255,255,255,0.28);
-    transform: scale(1.08);
-}
 
-/* Left and right arrows */
+/* ARROWS */
 
 .viewer-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 55px;
-    height: 55px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.16);
-    color: white;
-    font-size: 48px;
-    line-height: 40px;
-    cursor: pointer;
-    z-index: 10002;
-}
+    position: absolute !important;
 
-.viewer-arrow:hover {
-    background: rgba(255,255,255,0.30);
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 55px !important;
+    height: 55px !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    background: rgba(255,255,255,0.18) !important;
+
+    color: white !important;
+
+    font-size: 48px !important;
+    line-height: 40px !important;
+
+    cursor: pointer !important;
+
+    z-index: 1000001 !important;
 }
 
 .viewer-prev {
-    left: 20px;
+    left: 20px !important;
 }
 
 .viewer-next {
-    right: 20px;
+    right: 20px !important;
 }
 
-/* Image number */
+
+/* IMAGE COUNTER */
 
 .image-counter {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 15px;
-    background: rgba(0,0,0,0.55);
-    padding: 7px 14px;
-    border-radius: 20px;
+    position: absolute !important;
+
+    bottom: 20px !important;
+    left: 50% !important;
+
+    transform: translateX(-50%) !important;
+
+    color: white !important;
+
+    font-size: 15px !important;
+
+    background: rgba(0,0,0,0.55) !important;
+
+    padding: 7px 14px !important;
+
+    border-radius: 20px !important;
+
+    z-index: 1000001 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .image-viewer {
+        padding: 12px !important;
+    }
+
+    .image-viewer #viewerImage {
+        max-width: 94vw !important;
+        max-height: 78vh !important;
+    }
+
+    .viewer-arrow {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 38px !important;
+    }
+
+    .viewer-prev {
+        left: 8px !important;
+    }
+
+    .viewer-next {
+        right: 8px !important;
+    }
+
+    .viewer-close {
+        top: 12px !important;
+        right: 12px !important;
+    }
 }
 
 /* ================================= */
