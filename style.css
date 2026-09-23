@@ -1638,3 +1638,19 @@ footer {
         font-size: 25px;
     }
 }
+
+/* FINAL POSITION FOR FLOATING BUTTONS */
+
+#topButton {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    z-index: 9998 !important;
+}
+
+.floating-whatsapp {
+    position: fixed !important;
+    right: 20px !important;
+    bottom: 90px !important;
+    z-index: 9999 !important;
+}
