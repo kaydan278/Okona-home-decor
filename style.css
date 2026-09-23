@@ -1445,3 +1445,137 @@ footer {
         transform: scale(1.02);
     }
 }
+
+/* ================================= */
+/* OKONA VIDEO 3D HERO BACKGROUND */
+/* ================================= */
+
+.video-hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    isolation: isolate;
+}
+
+/* Background video */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%) scale(1.08);
+    z-index: -3;
+    pointer-events: none;
+}
+
+/* Dark overlay so text remains clear */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.42);
+    z-index: -2;
+}
+
+/* Hero content sits above the video */
+.video-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    padding: 60px 25px;
+    text-align: center;
+    transform-style: preserve-3d;
+    animation: okonaHeroIn 1s ease;
+}
+
+/* 3D text depth */
+.video-hero .hero-content h2 {
+    transform: translateZ(35px);
+    text-shadow:
+        0 3px 5px rgba(0,0,0,0.45),
+        0 10px 20px rgba(0,0,0,0.25);
+}
+
+.video-hero .hero-content p {
+    transform: translateZ(20px);
+}
+
+/* 3D hero buttons */
+.video-hero .hero-buttons {
+    transform: translateZ(30px);
+}
+
+/* Gentle 3D movement */
+@keyframes okonaHeroIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) translateZ(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+    }
+}
+
+/* Slight depth movement for video */
+@keyframes okonaVideoZoom {
+    0% {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.08);
+    }
+}
+
+.hero-video {
+    animation: okonaVideoZoom 18s ease-in-out infinite;
+}
+
+/* ================================= */
+/* MOBILE VIDEO HERO */
+/* ================================= */
+
+@media (max-width: 600px) {
+
+    .video-hero {
+        min-height: 560px;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    .video-hero .hero-content {
+        padding: 50px 18px;
+    }
+
+    .video-hero .hero-content h2 {
+        transform: translateZ(15px);
+    }
+
+    .video-hero .hero-content p {
+        transform: translateZ(10px);
+    }
+
+    .video-hero .hero-buttons {
+        transform: translateZ(15px);
+    }
+
+    .hero-overlay {
+        background: rgba(0, 0, 0, 0.48);
+    }
+}
