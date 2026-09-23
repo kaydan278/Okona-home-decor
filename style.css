@@ -1820,3 +1820,332 @@ footer {
         font-size: 14px;
     }
 }
+
+/* ========================================= */
+/* OKONA — PREMIUM 3D SHOWROOM BACKGROUND    */
+/* ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f8f7f4 28%,
+            #ffffff 55%,
+            #f7f6f2 78%,
+            #ffffff 100%
+        );
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* ========================================= */
+/* SECTION DEPTH                             */
+/* ========================================= */
+
+section {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Soft decorative background glow */
+section::before {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(180, 160, 120, 0.10),
+        transparent 70%
+    );
+    top: 10%;
+    left: -140px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(180, 160, 120, 0.08),
+        transparent 70%
+    );
+    bottom: 5%;
+    right: -130px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ========================================= */
+/* SERVICES                                  */
+/* ========================================= */
+
+#services {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5f3ee
+        );
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* ========================================= */
+/* CATEGORIES                                */
+/* ========================================= */
+
+#categories {
+    background:
+        linear-gradient(
+            180deg,
+            #f7f6f2,
+            #ffffff
+        );
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* ========================================= */
+/* FEATURED PRODUCTS                         */
+/* ========================================= */
+
+#featured {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f6f4ef,
+            #ffffff
+        );
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* ========================================= */
+/* WHY OKONA                                 */
+/* ========================================= */
+
+#why-us {
+    background:
+        linear-gradient(
+            180deg,
+            #f5f3ee,
+            #ffffff
+        );
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* ========================================= */
+/* ABOUT                                     */
+/* ========================================= */
+
+#about {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f7f6f2
+        );
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* ========================================= */
+/* PRODUCTS                                  */
+/* ========================================= */
+
+#products {
+    background:
+        linear-gradient(
+            180deg,
+            #f8f7f4,
+            #ffffff,
+            #f7f6f2
+        );
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+/* ========================================= */
+/* TESTIMONIALS                              */
+/* ========================================= */
+
+#testimonials {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5f3ee
+        );
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* ========================================= */
+/* CONTACT                                   */
+/* ========================================= */
+
+#contact {
+    background:
+        linear-gradient(
+            180deg,
+            #f7f6f2,
+            #ffffff
+        );
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+/* ========================================= */
+/* 3D SECTION HEADINGS                      */
+/* ========================================= */
+
+section h2 {
+    position: relative;
+    text-shadow:
+        0 2px 3px rgba(0,0,0,0.08);
+    transform: translateZ(15px);
+}
+
+/* Small decorative line under headings */
+section h2::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 10px;
+    background: currentColor;
+    opacity: 0.35;
+}
+
+/* ========================================= */
+/* 3D IMAGE DEPTH                            */
+/* ========================================= */
+
+.category-card img,
+.featured-card img,
+.gallery img {
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+    will-change: transform;
+}
+
+.category-card:hover img,
+.featured-card:hover img,
+.gallery img:hover {
+    transform: scale(1.045) translateZ(12px);
+}
+
+/* ========================================= */
+/* PRODUCT CARDS                             */
+/* ========================================= */
+
+.category-card,
+.featured-card,
+.service-card,
+.why-box,
+.testimonial-card {
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(0,0,0,0.06);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.08),
+        0 2px 5px rgba(0,0,0,0.04);
+}
+
+/* ========================================= */
+/* MOBILE                                    */
+/* ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        background:
+            linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #f8f7f4 30%,
+                #ffffff 60%,
+                #f7f6f2 100%
+            );
+    }
+
+    section {
+        overflow: hidden;
+    }
+
+    section::before {
+        width: 180px;
+        height: 180px;
+        left: -90px;
+    }
+
+    section::after {
+        width: 170px;
+        height: 170px;
+        right: -85px;
+    }
+
+    #services,
+    #categories,
+    #featured,
+    #why-us,
+    #about,
+    #products,
+    #testimonials,
+    #contact {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    section h2 {
+        text-shadow:
+            0 2px 4px rgba(0,0,0,0.10);
+    }
+
+    .category-card,
+    .featured-card,
+    .service-card,
+    .why-box,
+    .testimonial-card {
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+}
+
+/* ========================================= */
+/* REDUCE MOTION FOR ACCESSIBILITY            */
+/* ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
